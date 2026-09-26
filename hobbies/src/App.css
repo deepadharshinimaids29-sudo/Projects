@@ -1,0 +1,131 @@
+.hobbies-section {
+  min-height: 100vh;
+  padding: 90px 8%;
+  background: #0b0b0b;
+  color: white;
+}
+
+.hobbies-header {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.hobbies-header span {
+  color: #d4af37;
+  font-size: 13px;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+.hobbies-header h2 {
+  font-size: 42px;
+  margin: 15px 0 10px;
+}
+
+.hobbies-header h2 b {
+  color: #d4af37;
+}
+
+.hobbies-header p {
+  color: #999;
+  font-size: 15px;
+}
+
+.hobbies-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.hobby-card {
+  position: relative;
+  min-height: 220px;
+  padding: 30px;
+  border: 1px solid #292929;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #151515, #0d0d0d);
+  overflow: hidden;
+  transition: 0.4s ease;
+}
+
+.hobby-card::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: #d4af37;
+  filter: blur(70px);
+  opacity: 0;
+  top: -20px;
+  right: -20px;
+  transition: 0.4s;
+}
+
+.hobby-card:hover {
+  transform: translateY(-8px);
+  border-color: #d4af37;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.hobby-card:hover::before {
+  opacity: 0.25;
+}
+
+.hobby-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #222;
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.hobby-content h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.hobby-content p {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.7;
+  max-width: 280px;
+}
+
+.card-number {
+  position: absolute;
+  right: 22px;
+  bottom: 18px;
+  color: #333;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.hobby-card:hover .card-number {
+  color: #d4af37;
+}
+
+@media (max-width: 900px) {
+  .hobbies-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .hobbies-section {
+    padding: 70px 6%;
+  }
+
+  .hobbies-header h2 {
+    font-size: 32px;
+  }
+
+  .hobbies-container {
+    grid-template-columns: 1fr;
+  }
+}
