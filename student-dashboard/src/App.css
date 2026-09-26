@@ -1,0 +1,503 @@
+/* ========================================
+   GLOBAL
+======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+}
+
+
+/* ========================================
+   FULL LAPTOP SCREEN
+======================================== */
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+  padding: 35px 7%;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.header {
+  width: 100%;
+  text-align: center;
+  padding: 32px 25px;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+  border-radius: 18px;
+}
+
+.header h1 {
+  font-size: 44px;
+  font-weight: 750;
+  margin-bottom: 10px;
+  color: white;
+}
+
+.header h2 {
+  font-size: 21px;
+  font-weight: 500;
+  color: #e0e7ff;
+}
+
+.welcome {
+  margin-top: 22px;
+}
+
+.welcome h3 {
+  font-size: 25px;
+  font-weight: 650;
+  color: white;
+}
+
+.welcome p {
+  font-size: 17px;
+  margin-top: 7px;
+  color: #ddd6fe;
+}
+
+
+/* ========================================
+   STUDENT GRID
+======================================== */
+
+.dashboard-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 45px;
+  margin-bottom: 45px;
+  align-items: center;
+}
+
+
+/* ========================================
+   STUDENT PROFILE
+======================================== */
+
+.student-card {
+  padding: 10px 0;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.student-photo {
+  width: 135px;
+  height: 135px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid #6366f1;
+  flex-shrink: 0;
+}
+
+.profile-section h2 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.profile-section p {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #475569;
+}
+
+
+/* ========================================
+   CGPA / ATTENDANCE
+======================================== */
+
+.stat-box {
+  padding: 20px 10px 20px 30px;
+  border-left: 4px solid #6366f1;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stat-box span {
+  display: block;
+  font-size: 18px;
+  font-weight: 650;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.stat-box h2 {
+  font-size: 54px;
+  font-weight: 750;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-box p {
+  font-size: 16px;
+  color: #64748b;
+}
+
+.cgpa-box h2 {
+  color: #7c3aed;
+}
+
+.attendance-box h2 {
+  color: #2563eb;
+}
+
+
+/* ========================================
+   ATTENDANCE PROGRESS
+======================================== */
+
+.attendance-section {
+  width: 100%;
+  padding: 28px 0;
+  border-top: 1px solid #d8dee9;
+  border-bottom: 1px solid #d8dee9;
+  margin-bottom: 40px;
+}
+
+.attendance-section h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  width: 100%;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 16px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #7c3aed
+  );
+  border-radius: 20px;
+}
+
+.attendance-value {
+  min-width: 65px;
+  text-align: right;
+  font-size: 19px;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.status-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  margin-bottom: 45px;
+}
+
+.status-card {
+  padding: 10px 0;
+}
+
+.status-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.eligible,
+.not-eligible {
+  font-size: 19px;
+  font-weight: 650;
+}
+
+.eligible {
+  color: #16a34a;
+}
+
+.not-eligible {
+  color: #dc2626;
+}
+
+
+/* ========================================
+   ACADEMIC INFORMATION
+======================================== */
+
+.info-box {
+  width: 100%;
+  margin-bottom: 45px;
+}
+
+.info-box h2 {
+  font-size: 29px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.info-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+
+.info-content p {
+  padding: 17px 0;
+  border-bottom: 2px solid #dfe3eb;
+  font-size: 17px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.info-content b {
+  display: block;
+  font-size: 24px;
+  font-weight: 750;
+  color: #4f46e5;
+  margin-top: 7px;
+}
+
+
+/* ========================================
+   SUBJECTS
+======================================== */
+
+.subject-card {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.section-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.section-title > span {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.section-title h2 {
+  font-size: 29px;
+  font-weight: 700;
+}
+
+.section-title p {
+  font-size: 16px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+
+/* SUBJECT LIST */
+
+.subject-list {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+}
+
+.subject-list li {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 62px;
+  padding: 16px 0;
+  border-bottom: 1px solid #dfe3eb;
+}
+
+.subject-number {
+  width: 70px;
+  flex-shrink: 0;
+  font-size: 18px;
+  font-weight: 750;
+  color: #7c3aed;
+}
+
+.subject-name {
+  flex: 1;
+  font-size: 20px;
+  font-weight: 650;
+  color: #334155;
+}
+
+.subject-arrow {
+  width: 30px;
+  text-align: right;
+  font-size: 24px;
+  color: #6366f1;
+}
+
+
+/* SUBJECT TOTAL */
+
+.subject-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 22px;
+  font-size: 17px;
+  color: #64748b;
+}
+
+.subject-total strong {
+  font-size: 22px;
+  color: #4f46e5;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+  width: 100%;
+  margin-top: 35px;
+  padding-top: 28px;
+  border-top: 1px solid #d8dee9;
+}
+
+.footer-line {
+  display: none;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer h3 {
+  font-size: 24px;
+  color: #4f46e5;
+  margin-bottom: 6px;
+}
+
+.footer p {
+  font-size: 15px;
+  color: #64748b;
+}
+
+.footer-info {
+  text-align: right;
+}
+
+.copyright {
+  text-align: center;
+  font-size: 15px !important;
+  margin-top: 25px;
+  padding-top: 18px;
+  border-top: 1px solid #e5e7eb;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+
+  .dashboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .student-card {
+    grid-column: 1 / -1;
+  }
+
+  .info-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media (max-width: 700px) {
+
+  .app {
+    padding: 25px 5%;
+  }
+
+  .header h1 {
+    font-size: 34px;
+  }
+
+  .header h2 {
+    font-size: 18px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .student-card {
+    grid-column: auto;
+  }
+
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .status-section {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .info-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-info {
+    text-align: center;
+  }
+}

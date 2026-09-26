@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f4f7;
+}
+
+.navbar {
+  height: 70px;
+  background: #172554;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: bold;
+}
+
+.home {
+  text-align: center;
+  margin-top: 150px;
+}
+
+.home h1 {
+  color: #172554;
+}
+
+button {
+  background: #172554;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #1e3a8a;
+}
+
+.rank-container {
+  width: 700px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.rank-container form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px #ccc;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.rank-card {
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px #ccc;
+  text-align: left;
+}
+
+.rank-card h2 {
+  text-align: center;
+  color: #172554;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th,
+td {
+  border: 1px solid #aaa;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background: #172554;
+  color: white;
+}
+
+.result {
+  background: #eef2ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.result p {
+  font-size: 17px;
+}
