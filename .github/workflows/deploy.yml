@@ -1,0 +1,62 @@
+﻿name: Deploy Projects to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Prepare static site
+        run: |
+          mkdir -p _site
+          cp index.html _site/index.html
+
+          find . -type d -name dist \
+            -not -path '*/node_modules/*' \
+            -not -path './_site/*' \
+            | while IFS= read -r dist; do
+                project=$(echo "$dist" | cut -d/ -f2)
+                mkdir -p "_site/$project"
+                cp -a "$dist/." "_site/$project/"
+              done
+
+          if [ -d "TODO/assets" ]; then
+            mkdir -p "_site/TODO"
+            cp -a TODO/assets _site/TODO/
+            [ ! -f TODO/index.html ] || cp TODO/index.html _site/TODO/
+            [ ! -f TODO/favicon.svg ] || cp TODO/favicon.svg _site/TODO/
+            [ ! -f TODO/icons.svg ] || cp TODO/icons.svg _site/TODO/
+          fi
+
+          touch _site/.nojekyll
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
